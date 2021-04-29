@@ -7,8 +7,7 @@ pip install -r requirements_nix.txt
 ```
 pip install -r requirements_win.txt
 ```
-Далее создать в корне проекта файл `.env` и указать данные для подключения к БД
-Атеншен, `postrgres`.
+Далее создать в корне проекта файл `.env` и указать данные для подключения к БД  Атеншен, `postrgres`.
 ```
 NAME= DBNAME
 USER= DBUSERNAME
