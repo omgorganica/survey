@@ -38,7 +38,7 @@ class Survey(models.Model):
 
 
 class UserAnswer(models.Model):
-    user = models.CharField(max_length=50)
+    user = models.CharField(max_length=50,null= True)
     survey = models.ForeignKey(Survey, on_delete=models.CASCADE, related_name='answers' )
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers' )
     answer_option = models.ForeignKey(AnswerOption, on_delete=models.CASCADE, related_name='answers' )

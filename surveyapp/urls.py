@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import SurveyCreateView, SurveyRetrieveUpdateDestroyView, SurveyListView, QuestionCreateView, \
     QuestionRetrieveUpdateDestroyView, QuestionListView,AnswerOptionCreateView,AnswerOptionRetrieveUpdateDestroyView, \
-    AnswerOptionListView, ActiveSurveyListView, UserAnswerOptionCreateView
+    AnswerOptionListView, ActiveSurveyListView, UserAnswerOptionCreateView,UserAnswerListView
 
 urlpatterns = [
     # Survey
@@ -19,4 +19,6 @@ urlpatterns = [
     path('answer_list', AnswerOptionListView.as_view(), name='answer_list'),
     # UserAnswers
     path('user_answer_create', UserAnswerOptionCreateView.as_view(), name='user_answer_create'),
+    # ?user=param for exact user queryset
+    path('user_answer_list', UserAnswerListView.as_view(), name='user_answer_list'),
 ]
