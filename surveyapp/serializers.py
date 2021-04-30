@@ -1,5 +1,7 @@
 from rest_framework import serializers
+from rest_framework.validators import UniqueTogetherValidator
 from .models import Question, AnswerOption, Survey, UserAnswer
+from rest_framework.exceptions import ValidationError
 
 
 class AnswerOptionsSerializer(serializers.ModelSerializer):
@@ -35,3 +37,4 @@ class UserAnswerSerializer(serializers.ModelSerializer):
         self.fields['question'] = QuestionSerializer()
         self.fields['survey'] = SurveySerializer()
         return super(UserAnswerSerializer, self).to_representation(obj)
+
