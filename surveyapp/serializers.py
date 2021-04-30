@@ -2,7 +2,6 @@ from rest_framework import serializers
 from .models import Question, AnswerOption, Survey, UserAnswer
 
 
-
 class AnswerOptionsSerializer(serializers.ModelSerializer):
     class Meta:
         model = AnswerOption
@@ -30,12 +29,9 @@ class UserAnswerSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserAnswer
         fields = ['user', 'survey', 'question', 'answer_option', 'user_answer']
-        extra_kwargs = {'survey': {'required': True}}
 
     def to_representation(self, obj):
         self.fields['answer_option'] = AnswerOptionsSerializer()
         self.fields['question'] = QuestionSerializer()
         self.fields['survey'] = SurveySerializer()
         return super(UserAnswerSerializer, self).to_representation(obj)
-
-

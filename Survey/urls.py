@@ -6,8 +6,6 @@ from .yasg import urlpatterns as yasg_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('surveyapp.urls')),
-    path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.authtoken')),
     path('auth/', include('djoser.urls.jwt')),
 
 ]
